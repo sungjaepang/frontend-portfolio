@@ -1,0 +1,415 @@
+/* 260612 프로젝트 시작 및 파일 생성 */ 
+/*  */ 
+
+/* 1단계 - 생성 */
+/* 2단계 Hero / About / Skills 개선 */
+/* 3단계 Skills 섹션 카테고리형으로 변경 */ 
+/* 4단계 Projects 카드 고도화 */
+/* 5단계 프로젝트 썸네일 이미지 추가 */ 
+/* 7단계 프로젝트 Meta 정보 추가 */
+/* 8단계 What I Learned 추가 */ 
+/*  */ 
+/*  */
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background: #f5f5f7;
+  color: #111827;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header .container {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header nav {
+  display: flex;
+  gap: 24px;
+  font-weight: 700;
+}
+
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 28px 0 0;
+  color: #4b5563;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.section h2 {
+  margin: 0 0 28px;
+  font-size: 42px;
+  letter-spacing: -0.04em;
+}
+
+.section p {
+  max-width: 760px;
+  color: #4b5563;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.skill-grid div,
+.project-card {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skill-grid div {
+  padding: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  padding: 28px;
+}
+
+.project-card h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.project-skills {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-skills span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.project-links {
+  margin-top: 28px;
+  display: flex;
+  gap: 10px;
+}
+
+.project-links a,
+.contact-links a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-weight: 800;
+}
+
+.contact-section {
+  padding-bottom: 140px;
+}
+
+.contact-links {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .project-grid,
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h2 {
+    font-size: clamp(44px, 12vw, 72px);
+  }
+}
+
+@media (max-width: 640px) {
+  .header .container {
+    height: auto;
+    padding: 18px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .header nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .project-grid,
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* ------------------------------ 2단계 Hero / About / Skills 개선 ------------------------------ */
+/* ------------------------------------------- ------------------------------------------- */
+.hero-label {
+  margin: 0 0 20px;
+  color: #6366f1;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-actions a {
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-weight: 800;
+}
+
+.hero-actions a:last-child {
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+
+
+
+/* ------------------------- 3단계 Skills 섹션 카테고리형으로 변경 ------------------------- */
+/* ------------------------------------------- ------------------------------------------- */
+.skill-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skill-group-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skill-group-card h3 {
+  margin: 0 0 20px;
+  font-size: 22px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .skill-group-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* ------------------------------ 4단계 Projects 카드 고도화 ------------------------------ */
+/* ------------------------------------------- ------------------------------------------- */
+.project-features {
+  margin: 20px 0 0;
+  padding-left: 18px;
+}
+
+.project-features li {
+  margin-bottom: 8px;
+  color: #4b5563;
+  font-size: 15px;
+}
+
+/* 카드 호버 효과 추가 */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease; 
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+/* -------------------------- 5단계 프로젝트 썸네일 이미지 추가 -------------------------- */
+/* ------------------------------------------- ------------------------------------------- */
+.project-thumb {
+  height: 180px;
+  margin: -28px -28px 24px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #111827, #4f46e5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 이미지로 교체 후 */
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+/* 임시 텍스트용 스타일 */
+/* .project-thumb span {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+} */
+
+/* 이미지로 교체 후 */
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ------------------------------ 7단계 프로젝트 Meta 정보 추가 ------------------------------ */
+/* ------------------------------------------- ------------------------------------------- */
+.project-meta {
+  margin: 12px 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-meta span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* ------------------------------ 8단계 What I Learned 추가 ------------------------------ */
+/* ------------------------------------------- ------------------------------------------- */
+.project-learned {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #f9fafb;
+}
+
+.project-learned strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.project-learned ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.project-learned li {
+  margin-bottom: 6px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+
+
+
+/* ------------------------------ n단계 ------------------------------ */
+/* ------------------------------------------- ------------------------------------------- */
+
