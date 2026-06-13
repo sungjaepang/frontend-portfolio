@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# personal study notes
+study.js
+main.js
+참고/
